@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>超级乐透 SuperLotto - 预售公告</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,29 +19,32 @@
         .gold-border-strong { border: 2px solid rgba(255, 215, 0, 0.5); }
         .gold-glow { box-shadow: 0 0 30px rgba(255, 215, 0, 0.2); }
         .gold-glow-strong { box-shadow: 0 0 50px rgba(255, 215, 0, 0.3); }
-        body { background: #0a0a0a; }
+        body { background: #0a0a0a; -webkit-tap-highlight-color: transparent; }
         .btn-gold { background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%); color: #000; font-weight: bold; }
         .btn-gold:hover { box-shadow: 0 0 30px rgba(255, 215, 0, 0.5); transform: translateY(-2px); }
+        .btn-gold:active { transform: translateY(0); }
+        * { -webkit-overflow-scrolling: touch; }
+        input, button { font-size: 16px !important; }
     </style>
 </head>
-<body class="bg-lotto-black min-h-screen text-white">
+<body class="bg-lotto-black min-h-screen text-white overflow-x-hidden">
     <!-- 背景装饰 -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-lotto-gold/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-lotto-gold/5 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-lotto-gold/3 rounded-full blur-3xl"></div>
+        <div class="absolute top-20 left-10 w-40 md:w-72 h-40 md:h-72 bg-lotto-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-48 md:w-96 h-48 md:h-96 bg-lotto-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-lotto-gold/3 rounded-full blur-3xl"></div>
     </div>
 
     <!-- 顶部导航 -->
     <nav class="relative z-10 border-b border-lotto-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="logo.jpg" alt="SuperLotto" class="w-12 h-12 rounded-full gold-glow">
-                    <span class="text-2xl font-bold gradient-text">超级乐透</span>
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <img src="logo.jpg" alt="SuperLotto" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full gold-glow">
+                    <span class="text-xl sm:text-2xl font-bold gradient-text">超级乐透</span>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <span class="px-4 py-2 bg-gradient-to-r from-lotto-gold/20 to-lotto-gold-dark/20 rounded-full text-lotto-gold text-sm font-medium border border-lotto-gold/30">🔥 预售进行中</span>
+                <div class="flex items-center">
+                    <span class="px-2 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-lotto-gold/20 to-lotto-gold-dark/20 rounded-full text-lotto-gold text-xs sm:text-sm font-medium border border-lotto-gold/30">🔥 预售中</span>
                 </div>
             </div>
         </div>
@@ -50,145 +53,145 @@
     <!-- 主要内容 -->
     <main class="relative z-10">
         <!-- Hero 区域 -->
-        <section class="py-20 px-4">
+        <section class="py-10 sm:py-20 px-3 sm:px-4">
             <div class="max-w-5xl mx-auto text-center">
-                <div class="flex justify-center space-x-4 mb-8">
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 0s;">8</div>
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 0.2s;">8</div>
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 0.4s;">8</div>
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 0.6s;">8</div>
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 0.8s;">8</div>
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 1s;">8</div>
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 1.2s;">8</div>
-                    <div class="number-ball w-14 h-14 rounded-full flex items-center justify-center text-black font-bold text-xl animate-float" style="animation-delay: 1.4s;">8</div>
+                <div class="flex justify-center flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8 px-2">
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float" style="animation-delay: 0s;">8</div>
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float" style="animation-delay: 0.2s;">8</div>
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float" style="animation-delay: 0.4s;">8</div>
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float" style="animation-delay: 0.6s;">8</div>
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float hidden sm:flex" style="animation-delay: 0.8s;">8</div>
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float hidden sm:flex" style="animation-delay: 1s;">8</div>
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float hidden md:flex" style="animation-delay: 1.2s;">8</div>
+                    <div class="number-ball w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-black font-bold text-base sm:text-xl animate-float hidden md:flex" style="animation-delay: 1.4s;">8</div>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6"><span class="gradient-text">超级乐透</span></h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-4">BSC 链上首个完全去中心化的彩票系统</p>
-                <p class="text-lg text-gray-500 mb-8">基于 Chainlink VRF 的可验证随机性 • 智能合约自动执行 • 公平透明</p>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 sm:mb-6"><span class="gradient-text">超级乐透</span></h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-3 sm:mb-4 px-2">BSC 链上首个完全去中心化的彩票系统</p>
+                <p class="text-sm sm:text-lg text-gray-500 mb-6 sm:mb-8 px-4">基于 Chainlink VRF 的可验证随机性 • 智能合约自动执行 • 公平透明</p>
                 
                 <!-- 预售核心信息卡片 -->
-                <div class="glass-card rounded-2xl p-8 max-w-3xl mx-auto mb-12 gold-border gold-glow">
-                    <div class="flex items-center justify-center space-x-2 mb-6">
+                <div class="glass-card rounded-2xl p-4 sm:p-8 max-w-3xl mx-auto mb-8 sm:mb-12 gold-border gold-glow">
+                    <div class="flex items-center justify-center space-x-2 mb-4 sm:mb-6">
                         <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lotto-gold opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-lotto-gold"></span></span>
-                        <span class="text-lotto-gold font-semibold">Flap.sh PreLaunch 公平预售进行中</span>
+                        <span class="text-lotto-gold font-semibold text-sm sm:text-base">Flap PreLaunch 公平预售进行中</span>
                     </div>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                        <div class="bg-black/50 rounded-xl p-4 gold-border">
+                    <div class="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-6">
+                        <div class="bg-black/50 rounded-xl p-3 sm:p-4 gold-border">
                             <p class="text-gray-500 text-xs mb-1">募集目标</p>
-                            <p class="text-2xl font-bold text-lotto-gold">120 BNB</p>
+                            <p class="text-xl sm:text-2xl font-bold text-lotto-gold">120 BNB</p>
                         </div>
-                        <div class="bg-black/50 rounded-xl p-4 gold-border">
+                        <div class="bg-black/50 rounded-xl p-3 sm:p-4 gold-border">
                             <p class="text-gray-500 text-xs mb-1">参与范围</p>
-                            <p class="text-2xl font-bold text-white">0.1~5 BNB</p>
+                            <p class="text-xl sm:text-2xl font-bold text-white">0.1~5 BNB</p>
                         </div>
-                        <div class="bg-black/50 rounded-xl p-4 gold-border">
+                        <div class="bg-black/50 rounded-xl p-3 sm:p-4 gold-border">
                             <p class="text-gray-500 text-xs mb-1">上线价格</p>
-                            <p class="text-2xl font-bold text-lotto-gold">$0.001</p>
+                            <p class="text-xl sm:text-2xl font-bold text-lotto-gold">$0.001</p>
                         </div>
-                        <div class="bg-black/50 rounded-xl p-4 gold-border">
+                        <div class="bg-black/50 rounded-xl p-3 sm:p-4 gold-border">
                             <p class="text-gray-500 text-xs mb-1">初始市值</p>
-                            <p class="text-2xl font-bold text-white">$1M</p>
+                            <p class="text-xl sm:text-2xl font-bold text-white">$1M</p>
                         </div>
                     </div>
                     
-                    <div class="bg-gradient-to-r from-red-900/30 to-orange-900/30 rounded-xl p-4 border border-red-500/30 mb-6">
-                        <p class="text-gray-300 text-sm mb-2">⏰ 募集时间限制：<span class="text-white font-bold">7 天</span></p>
-                        <p class="text-red-400 text-sm">若未在 7 天内完成募集，所有资金将 <span class="font-bold">全额退款</span></p>
+                    <div class="bg-gradient-to-r from-red-900/30 to-orange-900/30 rounded-xl p-3 sm:p-4 border border-red-500/30 mb-4 sm:mb-6">
+                        <p class="text-gray-300 text-xs sm:text-sm mb-1 sm:mb-2">⏰ 募集时间限制：<span class="text-white font-bold">7 天</span></p>
+                        <p class="text-red-400 text-xs sm:text-sm">若未在 7 天内完成募集，所有资金将 <span class="font-bold">全额退款</span></p>
                     </div>
                     
-                    <div class="grid grid-cols-2 gap-6 text-center border-t border-lotto-gold/20 pt-6">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6 text-center border-t border-lotto-gold/20 pt-4 sm:pt-6">
                         <div>
-                            <p class="text-gray-500 text-sm mb-1">每张彩票所需代币</p>
-                            <p class="text-3xl font-bold text-lotto-gold">10,000</p>
+                            <p class="text-gray-500 text-xs sm:text-sm mb-1">每张彩票所需代币</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-lotto-gold">10,000</p>
                         </div>
                         <div>
-                            <p class="text-gray-500 text-sm mb-1">开奖间隔</p>
-                            <p class="text-3xl font-bold text-lotto-gold">30 分钟</p>
+                            <p class="text-gray-500 text-xs sm:text-sm mb-1">开奖间隔</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-lotto-gold">30 分钟</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://prelaunch.flap.sh/bnb/sales" class="px-8 py-4 btn-gold rounded-xl text-lg transition-all duration-300">🚀 参与 Flap.sh 预售</a>
-                    <a href="#whitelist" class="px-8 py-4 glass-card rounded-xl font-bold text-lg hover:bg-lotto-gold/10 transition-all duration-300 gold-border">📋 提交白名单</a>
+                <div class="flex flex-col items-center gap-3 sm:gap-4 px-4">
+                    <a href="https://prelaunch.flap.sh/bnb/sales" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 btn-gold rounded-xl text-base sm:text-lg transition-all duration-300 text-center">🚀 参与 Flap.sh 预售</a>
+                    <a href="#whitelist" class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 glass-card rounded-xl font-bold text-base sm:text-lg hover:bg-lotto-gold/10 transition-all duration-300 gold-border text-center">📋 提交白名单</a>
                 </div>
             </div>
         </section>
 
         <!-- 白名单提交 -->
-        <section id="whitelist" class="py-16 px-4">
+        <section id="whitelist" class="py-12 sm:py-16 px-3 sm:px-4">
             <div class="max-w-xl mx-auto">
-                <div class="glass-card rounded-2xl p-8 gold-border gold-glow">
-                    <h2 class="text-2xl font-bold text-center mb-6"><span class="gradient-text">提交白名单</span></h2>
-                    <p class="text-gray-400 text-center mb-6">提交您的钱包地址以加入白名单，抢先获得预售资格</p>
+                <div class="glass-card rounded-2xl p-5 sm:p-8 gold-border gold-glow">
+                    <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6"><span class="gradient-text">提交白名单</span></h2>
+                    <p class="text-gray-400 text-center mb-4 sm:mb-6 text-sm sm:text-base">提交您的钱包地址以加入白名单，抢先获得预售资格</p>
                     
                     <form id="whitelistForm" class="space-y-4">
                         <div>
                             <label class="block text-gray-400 text-sm mb-2">钱包地址 (BSC)</label>
-                            <input type="text" id="walletAddress" placeholder="0x..." class="w-full px-4 py-3 bg-black/50 border border-lotto-gold/30 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-lotto-gold transition-colors" required>
+                            <input type="text" id="walletAddress" placeholder="0x..." class="w-full px-4 py-3 bg-black/50 border border-lotto-gold/30 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-lotto-gold transition-colors text-base" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                             <p id="errorMsg" class="text-red-500 text-sm mt-2 hidden"></p>
                         </div>
-                        <button type="submit" id="submitBtn" class="w-full py-4 btn-gold rounded-xl text-lg transition-all duration-300">提交白名单</button>
+                        <button type="submit" id="submitBtn" class="w-full py-3.5 sm:py-4 btn-gold rounded-xl text-base sm:text-lg transition-all duration-300">提交白名单</button>
                     </form>
                     
                     <div id="successMsg" class="hidden mt-4 p-4 bg-green-900/30 border border-green-500/30 rounded-xl text-center">
-                        <p class="text-green-400">✅ 白名单提交成功！预计10分钟后可购买</p>
+                        <p class="text-green-400 text-sm sm:text-base">✅ 白名单提交成功！预计10分钟后可购买</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Flap.sh 预售详情 -->
-        <section id="presale" class="py-16 px-4 bg-gradient-to-b from-lotto-gold/5 via-transparent to-transparent">
+        <section id="presale" class="py-12 sm:py-16 px-3 sm:px-4 bg-gradient-to-b from-lotto-gold/5 via-transparent to-transparent">
             <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-12">
-                    <div class="inline-flex items-center space-x-2 px-4 py-2 bg-lotto-gold/10 rounded-full mb-4 gold-border">
-                        <span class="text-lotto-gold font-medium">Flap.sh PreLaunch</span>
+                <div class="text-center mb-8 sm:mb-12">
+                    <div class="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 bg-lotto-gold/10 rounded-full mb-4 gold-border">
+                        <span class="text-lotto-gold font-medium text-sm sm:text-base">Flap.sh PreLaunch</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="gradient-text">公平预售详情</span></h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto">通过 Flap.sh PreLaunch 模式进行公平预售，确保所有参与者机会均等</p>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4"><span class="gradient-text">公平预售详情</span></h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base px-4">通过 Flap PreLaunch 模式进行公平预售，确保所有参与者机会均等</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="glass-card rounded-2xl p-6 gold-border">
-                        <h3 class="text-xl font-bold text-lotto-gold mb-6 flex items-center"><span class="w-8 h-8 bg-lotto-gold/20 rounded-lg flex items-center justify-center mr-3">🪙</span>代币分配方案</h3>
+                <div class="grid md:grid-cols-2 gap-4 sm:gap-8">
+                    <div class="glass-card rounded-2xl p-4 sm:p-6 gold-border">
+                        <h3 class="text-lg sm:text-xl font-bold text-lotto-gold mb-4 sm:mb-6 flex items-center"><span class="w-7 h-7 sm:w-8 sm:h-8 bg-lotto-gold/20 rounded-lg flex items-center justify-center mr-2 sm:mr-3 text-sm sm:text-base">🪙</span>代币分配方案</h3>
                         
-                        <div class="mb-6">
-                            <div class="flex h-8 rounded-full overflow-hidden mb-4">
-                                <div class="bg-gradient-to-r from-lotto-gold to-lotto-gold-dark flex items-center justify-center text-black text-xs font-bold" style="width: 11.43%">11.4%</div>
-                                <div class="bg-gradient-to-r from-gray-800 to-gray-900 flex items-center justify-center text-white text-xs font-bold" style="width: 88.57%">88.6% 销毁</div>
+                        <div class="mb-4 sm:mb-6">
+                            <div class="flex h-7 sm:h-8 rounded-full overflow-hidden mb-4">
+                                <div class="bg-gradient-to-r from-lotto-gold to-lotto-gold-dark flex items-center justify-center text-black text-[10px] sm:text-xs font-bold" style="width: 11.43%">11%</div>
+                                <div class="bg-gradient-to-r from-gray-800 to-gray-900 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold" style="width: 88.57%">89% 销毁</div>
                             </div>
                         </div>
                         
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-4 bg-lotto-gold/10 rounded-xl gold-border">
-                                <div class="flex items-center"><span class="text-2xl mr-3">🎁</span><div><p class="font-bold text-lotto-gold">预售分配</p><p class="text-gray-500 text-sm">分配给参与者</p></div></div>
-                                <div class="text-right"><p class="font-bold text-white">107,427,491</p><p class="text-gray-500 text-sm">枚代币</p></div>
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-center justify-between p-3 sm:p-4 bg-lotto-gold/10 rounded-xl gold-border">
+                                <div class="flex items-center"><span class="text-xl sm:text-2xl mr-2 sm:mr-3">🎁</span><div><p class="font-bold text-lotto-gold text-sm sm:text-base">预售分配</p><p class="text-gray-500 text-xs">分配给参与者</p></div></div>
+                                <div class="text-right"><p class="font-bold text-white text-sm sm:text-base">107,427,491</p><p class="text-gray-500 text-xs">枚代币</p></div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-4 bg-gray-900/50 rounded-xl border border-gray-700">
-                                <div class="flex items-center"><span class="text-2xl mr-3">🔥</span><div><p class="font-bold text-gray-300">永久销毁</p><p class="text-gray-500 text-sm">Burn 销毁</p></div></div>
-                                <div class="text-right"><p class="font-bold text-white">831,681,883</p><p class="text-gray-500 text-sm">枚代币</p></div>
+                            <div class="flex items-center justify-between p-3 sm:p-4 bg-gray-900/50 rounded-xl border border-gray-700">
+                                <div class="flex items-center"><span class="text-xl sm:text-2xl mr-2 sm:mr-3">🔥</span><div><p class="font-bold text-gray-300 text-sm sm:text-base">永久销毁</p><p class="text-gray-500 text-xs">Burn 销毁</p></div></div>
+                                <div class="text-right"><p class="font-bold text-white text-sm sm:text-base">831,681,883</p><p class="text-gray-500 text-xs">枚代币</p></div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="glass-card rounded-2xl p-6 gold-border">
-                        <h3 class="text-xl font-bold text-lotto-gold mb-6 flex items-center"><span class="w-8 h-8 bg-lotto-gold/20 rounded-lg flex items-center justify-center mr-3">💰</span>募集信息</h3>
+                    <div class="glass-card rounded-2xl p-4 sm:p-6 gold-border">
+                        <h3 class="text-lg sm:text-xl font-bold text-lotto-gold mb-4 sm:mb-6 flex items-center"><span class="w-7 h-7 sm:w-8 sm:h-8 bg-lotto-gold/20 rounded-lg flex items-center justify-center mr-2 sm:mr-3 text-sm sm:text-base">💰</span>募集信息</h3>
                         
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center py-3 border-b border-lotto-gold/10"><span class="text-gray-500">募集目标</span><span class="font-bold text-white text-lg">120 BNB</span></div>
-                            <div class="flex justify-between items-center py-3 border-b border-lotto-gold/10"><span class="text-gray-500">参与范围</span><span class="font-bold text-lotto-gold">0.1 ~ 5 BNB</span></div>
-                            <div class="flex justify-between items-center py-3 border-b border-lotto-gold/10"><span class="text-gray-500">募集时间</span><span class="font-bold text-white">7 天</span></div>
-                            <div class="flex justify-between items-center py-3 border-b border-lotto-gold/10"><span class="text-gray-500">上线交易所</span><span class="font-bold text-lotto-gold">PancakeSwap</span></div>
-                            <div class="flex justify-between items-center py-3 border-b border-lotto-gold/10"><span class="text-gray-500">上线价格</span><span class="font-bold text-lotto-gold">$0.001 / 枚</span></div>
-                            <div class="flex justify-between items-center py-3"><span class="text-gray-500">初始市值</span><span class="font-bold text-lotto-gold text-lg">$1,000,000</span></div>
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex justify-between items-center py-2 sm:py-3 border-b border-lotto-gold/10"><span class="text-gray-500 text-sm">募集目标</span><span class="font-bold text-white text-base sm:text-lg">120 BNB</span></div>
+                            <div class="flex justify-between items-center py-2 sm:py-3 border-b border-lotto-gold/10"><span class="text-gray-500 text-sm">参与范围</span><span class="font-bold text-lotto-gold text-sm sm:text-base">0.1 ~ 5 BNB</span></div>
+                            <div class="flex justify-between items-center py-2 sm:py-3 border-b border-lotto-gold/10"><span class="text-gray-500 text-sm">募集时间</span><span class="font-bold text-white text-sm sm:text-base">7 天</span></div>
+                            <div class="flex justify-between items-center py-2 sm:py-3 border-b border-lotto-gold/10"><span class="text-gray-500 text-sm">上线交易所</span><span class="font-bold text-lotto-gold text-sm sm:text-base">PancakeSwap</span></div>
+                            <div class="flex justify-between items-center py-2 sm:py-3 border-b border-lotto-gold/10"><span class="text-gray-500 text-sm">上线价格</span><span class="font-bold text-lotto-gold text-sm sm:text-base">$0.001 / 枚</span></div>
+                            <div class="flex justify-between items-center py-2 sm:py-3"><span class="text-gray-500 text-sm">初始市值</span><span class="font-bold text-lotto-gold text-base sm:text-lg">$1,000,000</span></div>
                         </div>
                         
-                        <div class="mt-6 p-4 bg-green-900/20 rounded-xl border border-green-500/30">
-                            <div class="flex items-start"><span class="text-2xl mr-3">🛡️</span><div><p class="font-bold text-green-400 mb-1">安全保障</p><p class="text-sm text-gray-400">若 7 天内未完成募集目标，所有资金将 <span class="text-green-400 font-bold">100% 全额退款</span></p></div></div>
+                        <div class="mt-4 sm:mt-6 p-3 sm:p-4 bg-green-900/20 rounded-xl border border-green-500/30">
+                            <div class="flex items-start"><span class="text-xl sm:text-2xl mr-2 sm:mr-3">🛡️</span><div><p class="font-bold text-green-400 mb-1 text-sm sm:text-base">安全保障</p><p class="text-xs sm:text-sm text-gray-400">若 7 天内未完成募集目标，所有资金将 <span class="text-green-400 font-bold">100% 全额退款</span></p></div></div>
                         </div>
                     </div>
                 </div>
@@ -196,106 +199,108 @@
         </section>
 
         <!-- 奖池机制 -->
-        <section class="py-16 px-4">
+        <section class="py-12 sm:py-16 px-3 sm:px-4">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4"><span class="gradient-text">奖池注入机制</span></h2>
-                <p class="text-gray-500 text-center mb-12">每一笔交易都在为奖池做贡献</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4"><span class="gradient-text">奖池注入机制</span></h2>
+                <p class="text-gray-500 text-center mb-8 sm:mb-12 text-sm sm:text-base">每一笔交易都在为奖池做贡献</p>
                 
-                <div class="glass-card rounded-2xl p-8 gold-border gold-glow">
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                        <div class="text-center">
-                            <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-4 gold-border"><svg class="w-12 h-12 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
-                            <p class="font-bold text-white text-lg">每笔交易</p>
-                        </div>
-                        <div class="text-4xl text-lotto-gold">→</div>
-                        <div class="text-center">
-                            <div class="w-24 h-24 bg-gradient-to-br from-lotto-gold to-lotto-gold-dark rounded-2xl flex items-center justify-center mx-auto mb-4 gold-glow-strong"><span class="text-3xl font-extrabold text-black">5%</span></div>
-                            <p class="font-bold text-white text-lg">交易税</p>
-                        </div>
-                        <div class="text-4xl text-lotto-gold">→</div>
-                        <div class="text-center">
-                            <div class="w-24 h-24 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-2xl flex items-center justify-center mx-auto mb-4 gold-border animate-pulse"><span class="text-4xl">🏆</span></div>
-                            <p class="font-bold text-white text-lg">100% 注入奖池</p>
+                <div class="glass-card rounded-2xl p-4 sm:p-8 gold-border gold-glow">
+                    <div class="flex flex-col items-center gap-4 sm:gap-8">
+                        <div class="flex flex-row items-center justify-center gap-3 sm:gap-8 w-full">
+                            <div class="text-center flex-1">
+                                <div class="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 gold-border"><svg class="w-8 h-8 sm:w-12 sm:h-12 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                                <p class="font-bold text-white text-xs sm:text-lg">每笔交易</p>
+                            </div>
+                            <div class="text-2xl sm:text-4xl text-lotto-gold">→</div>
+                            <div class="text-center flex-1">
+                                <div class="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-lotto-gold to-lotto-gold-dark rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 gold-glow-strong"><span class="text-xl sm:text-3xl font-extrabold text-black">5%</span></div>
+                                <p class="font-bold text-white text-xs sm:text-lg">交易税</p>
+                            </div>
+                            <div class="text-2xl sm:text-4xl text-lotto-gold">→</div>
+                            <div class="text-center flex-1">
+                                <div class="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 gold-border animate-pulse"><span class="text-2xl sm:text-4xl">🏆</span></div>
+                                <p class="font-bold text-white text-xs sm:text-lg">100% 奖池</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="mt-8 text-center"><p class="text-gray-400 text-lg"><span class="text-lotto-gold font-bold">5%</span> 交易税 <span class="text-white font-bold">全部</span> 注入奖池，交易越活跃，奖池增长越快！</p></div>
+                    <div class="mt-6 sm:mt-8 text-center"><p class="text-gray-400 text-sm sm:text-lg"><span class="text-lotto-gold font-bold">5%</span> 交易税 <span class="text-white font-bold">全部</span> 注入奖池</p></div>
                     
-                    <div class="mt-6 grid md:grid-cols-3 gap-4">
-                        <div class="bg-black/50 rounded-xl p-4 text-center gold-border"><p class="text-gray-500 text-sm mb-1">日交易额 $1,000,000</p><p class="text-lotto-gold font-bold text-xl">奖池 +$50,000/天</p></div>
-                        <div class="bg-black/50 rounded-xl p-4 text-center gold-border"><p class="text-gray-500 text-sm mb-1">日交易额 $5,000,000</p><p class="text-lotto-gold font-bold text-xl">奖池 +$250,000/天</p></div>
-                        <div class="bg-black/50 rounded-xl p-4 text-center gold-border"><p class="text-gray-500 text-sm mb-1">日交易额 $10,000,000</p><p class="text-lotto-gold font-bold text-xl">奖池 +$500,000/天</p></div>
+                    <div class="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                        <div class="bg-black/50 rounded-xl p-3 sm:p-4 text-center gold-border"><p class="text-gray-500 text-xs mb-1">日交易额 $1M</p><p class="text-lotto-gold font-bold text-base sm:text-xl">+$50,000/天</p></div>
+                        <div class="bg-black/50 rounded-xl p-3 sm:p-4 text-center gold-border"><p class="text-gray-500 text-xs mb-1">日交易额 $5M</p><p class="text-lotto-gold font-bold text-base sm:text-xl">+$250,000/天</p></div>
+                        <div class="bg-black/50 rounded-xl p-3 sm:p-4 text-center gold-border"><p class="text-gray-500 text-xs mb-1">日交易额 $10M</p><p class="text-lotto-gold font-bold text-base sm:text-xl">+$500,000/天</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 核心特点 -->
-        <section class="py-16 px-4 bg-gradient-to-b from-transparent via-lotto-gold/5 to-transparent">
+        <section class="py-12 sm:py-16 px-3 sm:px-4 bg-gradient-to-b from-transparent via-lotto-gold/5 to-transparent">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">为什么选择超级乐透？</span></h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12"><span class="gradient-text">为什么选择超级乐透？</span></h2>
                 
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="glass-card rounded-2xl p-6 hover:border-lotto-gold/50 transition-all duration-300 gold-border">
-                        <div class="w-16 h-16 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-xl flex items-center justify-center mb-4 gold-border"><svg class="w-8 h-8 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-                        <h3 class="text-xl font-bold mb-2 text-lotto-gold">Chainlink VRF 保障</h3>
-                        <p class="text-gray-500">采用 Chainlink 可验证随机函数，确保开奖结果绝对公平，无法被操纵</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                    <div class="glass-card rounded-2xl p-5 sm:p-6 hover:border-lotto-gold/50 transition-all duration-300 gold-border">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-xl flex items-center justify-center mb-4 gold-border"><svg class="w-7 h-7 sm:w-8 sm:h-8 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-lotto-gold">Chainlink VRF 保障</h3>
+                        <p class="text-gray-500 text-sm">采用 Chainlink 可验证随机函数，确保开奖结果绝对公平，无法被操纵</p>
                     </div>
                     
-                    <div class="glass-card rounded-2xl p-6 hover:border-lotto-gold/50 transition-all duration-300 gold-border">
-                        <div class="w-16 h-16 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-xl flex items-center justify-center mb-4 gold-border"><svg class="w-8 h-8 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-                        <h3 class="text-xl font-bold mb-2 text-lotto-gold">自动化执行</h3>
-                        <p class="text-gray-500">智能合约自动开奖、自动分配奖金，无需人工干预，7×24小时运行</p>
+                    <div class="glass-card rounded-2xl p-5 sm:p-6 hover:border-lotto-gold/50 transition-all duration-300 gold-border">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-xl flex items-center justify-center mb-4 gold-border"><svg class="w-7 h-7 sm:w-8 sm:h-8 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-lotto-gold">自动化执行</h3>
+                        <p class="text-gray-500 text-sm">智能合约自动开奖、自动分配奖金，无需人工干预，7×24小时运行</p>
                     </div>
                     
-                    <div class="glass-card rounded-2xl p-6 hover:border-lotto-gold/50 transition-all duration-300 gold-border">
-                        <div class="w-16 h-16 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-xl flex items-center justify-center mb-4 gold-border"><svg class="w-8 h-8 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-                        <h3 class="text-xl font-bold mb-2 text-lotto-gold">奖池透明</h3>
-                        <p class="text-gray-500">所有资金链上可查，奖池余额实时公开，中奖后立即自动打款</p>
+                    <div class="glass-card rounded-2xl p-5 sm:p-6 hover:border-lotto-gold/50 transition-all duration-300 gold-border">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-lotto-gold/20 to-lotto-gold-dark/20 rounded-xl flex items-center justify-center mb-4 gold-border"><svg class="w-7 h-7 sm:w-8 sm:h-8 text-lotto-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-lotto-gold">奖池透明</h3>
+                        <p class="text-gray-500 text-sm">所有资金链上可查，奖池余额实时公开，中奖后立即自动打款</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 运行机制 -->
-        <section id="how-it-works" class="py-16 px-4">
+        <section id="how-it-works" class="py-12 sm:py-16 px-3 sm:px-4">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4"><span class="gradient-text">项目运行流程</span></h2>
-                <p class="text-gray-500 text-center mb-12 max-w-2xl mx-auto">从持币到中奖，简单四步即可参与</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4"><span class="gradient-text">项目运行流程</span></h2>
+                <p class="text-gray-500 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">从持币到中奖，简单四步即可参与</p>
                 
                 <div class="relative">
                     <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-lotto-gold via-lotto-gold-dark to-lotto-gold transform -translate-y-1/2"></div>
                     
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
                         <div class="relative">
-                            <div class="glass-card rounded-2xl p-6 text-center h-full gold-border">
-                                <div class="w-12 h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-xl mx-auto mb-4 relative z-10">1</div>
-                                <h3 class="text-lg font-bold mb-3 text-lotto-gold">持有代币</h3>
-                                <p class="text-gray-500 text-sm">购买并持有项目代币，每 <span class="text-white font-semibold">10,000</span> 个代币可注册 <span class="text-white font-semibold">1</span> 个号码</p>
+                            <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center h-full gold-border">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-lg sm:text-xl mx-auto mb-3 sm:mb-4 relative z-10">1</div>
+                                <h3 class="text-sm sm:text-lg font-bold mb-2 sm:mb-3 text-lotto-gold">持有代币</h3>
+                                <p class="text-gray-500 text-xs sm:text-sm">每 <span class="text-white font-semibold">10,000</span> 个代币可注册 <span class="text-white font-semibold">1</span> 个号码</p>
                             </div>
                         </div>
                         
                         <div class="relative">
-                            <div class="glass-card rounded-2xl p-6 text-center h-full gold-border">
-                                <div class="w-12 h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-xl mx-auto mb-4 relative z-10">2</div>
-                                <h3 class="text-lg font-bold mb-3 text-lotto-gold">注册号码</h3>
-                                <p class="text-gray-500 text-sm">选择 <span class="text-white font-semibold">0 ~ 99,999,999</span> 之间的专属号码进行注册</p>
+                            <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center h-full gold-border">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-lg sm:text-xl mx-auto mb-3 sm:mb-4 relative z-10">2</div>
+                                <h3 class="text-sm sm:text-lg font-bold mb-2 sm:mb-3 text-lotto-gold">注册号码</h3>
+                                <p class="text-gray-500 text-xs sm:text-sm">选择 <span class="text-white font-semibold">0~99,999,999</span> 的专属号码</p>
                             </div>
                         </div>
                         
                         <div class="relative">
-                            <div class="glass-card rounded-2xl p-6 text-center h-full gold-border">
-                                <div class="w-12 h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-xl mx-auto mb-4 relative z-10">3</div>
-                                <h3 class="text-lg font-bold mb-3 text-lotto-gold">等待开奖</h3>
-                                <p class="text-gray-500 text-sm">每 <span class="text-white font-semibold">30 分钟</span> 自动开奖一次，使用 Chainlink VRF 生成随机中奖号码</p>
+                            <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center h-full gold-border">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-lg sm:text-xl mx-auto mb-3 sm:mb-4 relative z-10">3</div>
+                                <h3 class="text-sm sm:text-lg font-bold mb-2 sm:mb-3 text-lotto-gold">等待开奖</h3>
+                                <p class="text-gray-500 text-xs sm:text-sm">每 <span class="text-white font-semibold">30 分钟</span> 自动开奖一次</p>
                             </div>
                         </div>
                         
                         <div class="relative">
-                            <div class="glass-card rounded-2xl p-6 text-center h-full gold-border">
-                                <div class="w-12 h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-xl mx-auto mb-4 relative z-10">4</div>
-                                <h3 class="text-lg font-bold mb-3 text-lotto-gold">赢取奖励</h3>
-                                <p class="text-gray-500 text-sm">与中奖号码距离最近的 <span class="text-white font-semibold">3 个不同持有者</span> 瓜分奖池</p>
+                            <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center h-full gold-border">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 number-ball rounded-full flex items-center justify-center text-black font-bold text-lg sm:text-xl mx-auto mb-3 sm:mb-4 relative z-10">4</div>
+                                <h3 class="text-sm sm:text-lg font-bold mb-2 sm:mb-3 text-lotto-gold">赢取奖励</h3>
+                                <p class="text-gray-500 text-xs sm:text-sm">距离最近的 <span class="text-white font-semibold">3 人</span> 瓜分奖池</p>
                             </div>
                         </div>
                     </div>
@@ -304,83 +309,83 @@
         </section>
 
         <!-- 奖金分配 -->
-        <section id="prizes" class="py-16 px-4 bg-gradient-to-b from-transparent via-lotto-gold/5 to-transparent">
+        <section id="prizes" class="py-12 sm:py-16 px-3 sm:px-4 bg-gradient-to-b from-transparent via-lotto-gold/5 to-transparent">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4"><span class="gradient-text">奖金分配方案</span></h2>
-                <p class="text-gray-500 text-center mb-12">每次开奖产生 3 名获奖者，按距离排名分配奖池</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4"><span class="gradient-text">奖金分配方案</span></h2>
+                <p class="text-gray-500 text-center mb-8 sm:mb-12 text-sm sm:text-base">每次开奖产生 3 名获奖者</p>
                 
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="glass-card rounded-2xl p-8 text-center gold-border-strong relative overflow-hidden gold-glow">
+                <div class="grid grid-cols-3 gap-2 sm:gap-6">
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center gold-border-strong relative overflow-hidden gold-glow">
                         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-lotto-gold to-lotto-gold-dark"></div>
-                        <div class="text-6xl mb-4">🥇</div>
-                        <h3 class="text-2xl font-bold text-lotto-gold mb-2">一等奖</h3>
-                        <p class="text-gray-500 mb-4">距离最近的号码</p>
-                        <div class="text-5xl font-extrabold gradient-text mb-2">90%</div>
-                        <p class="text-gray-600 text-sm">奖池份额</p>
+                        <div class="text-3xl sm:text-6xl mb-2 sm:mb-4">🥇</div>
+                        <h3 class="text-base sm:text-2xl font-bold text-lotto-gold mb-1 sm:mb-2">一等奖</h3>
+                        <p class="text-gray-500 mb-2 sm:mb-4 text-xs sm:text-base hidden sm:block">距离最近</p>
+                        <div class="text-2xl sm:text-5xl font-extrabold gradient-text mb-1 sm:mb-2">90%</div>
+                        <p class="text-gray-600 text-xs">奖池份额</p>
                     </div>
                     
-                    <div class="glass-card rounded-2xl p-8 text-center border border-gray-600 relative overflow-hidden">
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center border border-gray-600 relative overflow-hidden">
                         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-400 to-gray-500"></div>
-                        <div class="text-6xl mb-4">🥈</div>
-                        <h3 class="text-2xl font-bold text-gray-400 mb-2">二等奖</h3>
-                        <p class="text-gray-500 mb-4">距离第二近的号码</p>
-                        <div class="text-5xl font-extrabold text-gray-400 mb-2">7%</div>
-                        <p class="text-gray-600 text-sm">奖池份额</p>
+                        <div class="text-3xl sm:text-6xl mb-2 sm:mb-4">🥈</div>
+                        <h3 class="text-base sm:text-2xl font-bold text-gray-400 mb-1 sm:mb-2">二等奖</h3>
+                        <p class="text-gray-500 mb-2 sm:mb-4 text-xs sm:text-base hidden sm:block">距离第二</p>
+                        <div class="text-2xl sm:text-5xl font-extrabold text-gray-400 mb-1 sm:mb-2">7%</div>
+                        <p class="text-gray-600 text-xs">奖池份额</p>
                     </div>
                     
-                    <div class="glass-card rounded-2xl p-8 text-center border border-orange-800 relative overflow-hidden">
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center border border-orange-800 relative overflow-hidden">
                         <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-700 to-orange-800"></div>
-                        <div class="text-6xl mb-4">🥉</div>
-                        <h3 class="text-2xl font-bold text-orange-600 mb-2">三等奖</h3>
-                        <p class="text-gray-500 mb-4">距离第三近的号码</p>
-                        <div class="text-5xl font-extrabold text-orange-600 mb-2">3%</div>
-                        <p class="text-gray-600 text-sm">奖池份额</p>
+                        <div class="text-3xl sm:text-6xl mb-2 sm:mb-4">🥉</div>
+                        <h3 class="text-base sm:text-2xl font-bold text-orange-600 mb-1 sm:mb-2">三等奖</h3>
+                        <p class="text-gray-500 mb-2 sm:mb-4 text-xs sm:text-base hidden sm:block">距离第三</p>
+                        <div class="text-2xl sm:text-5xl font-extrabold text-orange-600 mb-1 sm:mb-2">3%</div>
+                        <p class="text-gray-600 text-xs">奖池份额</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 路线图 -->
-        <section class="py-16 px-4">
+        <section class="py-12 sm:py-16 px-3 sm:px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">发展路线图</span></h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12"><span class="gradient-text">发展路线图</span></h2>
                 
                 <div class="relative">
                     <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-lotto-gold via-lotto-gold-dark to-lotto-gold"></div>
                     
-                    <div class="space-y-12">
+                    <div class="space-y-8 sm:space-y-12">
                         <div class="relative flex items-center">
-                            <div class="absolute left-4 md:left-1/2 w-4 h-4 -ml-2 number-ball rounded-full"></div>
-                            <div class="ml-12 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                                <div class="glass-card rounded-xl p-5 gold-border">
-                                    <span class="text-lotto-gold font-bold">阶段一</span>
-                                    <h4 class="text-lg font-bold text-white mt-1 mb-2">Flap.sh 预售</h4>
-                                    <p class="text-gray-500 text-sm">通过 PreLaunch 模式公平募集 120 BNB，7天期限</p>
-                                    <span class="inline-block mt-3 px-3 py-1 bg-lotto-gold/20 text-lotto-gold text-xs rounded-full">🔥 进行中</span>
+                            <div class="absolute left-4 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 -ml-1.5 sm:-ml-2 number-ball rounded-full"></div>
+                            <div class="ml-10 sm:ml-12 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+                                <div class="glass-card rounded-xl p-4 sm:p-5 gold-border">
+                                    <span class="text-lotto-gold font-bold text-sm sm:text-base">阶段一</span>
+                                    <h4 class="text-base sm:text-lg font-bold text-white mt-1 mb-2">Flap.sh 预售</h4>
+                                    <p class="text-gray-500 text-xs sm:text-sm">通过 PreLaunch 模式公平募集 120 BNB，7天期限</p>
+                                    <span class="inline-block mt-2 sm:mt-3 px-2 sm:px-3 py-1 bg-lotto-gold/20 text-lotto-gold text-xs rounded-full">🔥 进行中</span>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="relative flex items-center md:flex-row-reverse">
-                            <div class="absolute left-4 md:left-1/2 w-4 h-4 -ml-2 bg-lotto-gold-dark rounded-full"></div>
-                            <div class="ml-12 md:ml-0 md:w-1/2 md:pl-12">
-                                <div class="glass-card rounded-xl p-5 gold-border">
-                                    <span class="text-lotto-gold-dark font-bold">阶段二</span>
-                                    <h4 class="text-lg font-bold text-white mt-1 mb-2">PancakeSwap 上线</h4>
-                                    <p class="text-gray-500 text-sm">以 $0.001 价格、$1M 市值上线</p>
-                                    <span class="inline-block mt-3 px-3 py-1 bg-gray-800 text-gray-500 text-xs rounded-full">即将开始</span>
+                            <div class="absolute left-4 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 -ml-1.5 sm:-ml-2 bg-lotto-gold-dark rounded-full"></div>
+                            <div class="ml-10 sm:ml-12 md:ml-0 md:w-1/2 md:pl-12">
+                                <div class="glass-card rounded-xl p-4 sm:p-5 gold-border">
+                                    <span class="text-lotto-gold-dark font-bold text-sm sm:text-base">阶段二</span>
+                                    <h4 class="text-base sm:text-lg font-bold text-white mt-1 mb-2">PancakeSwap 上线</h4>
+                                    <p class="text-gray-500 text-xs sm:text-sm">以 $0.001 价格、$1M 市值上线</p>
+                                    <span class="inline-block mt-2 sm:mt-3 px-2 sm:px-3 py-1 bg-gray-800 text-gray-500 text-xs rounded-full">即将开始</span>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="relative flex items-center">
-                            <div class="absolute left-4 md:left-1/2 w-4 h-4 -ml-2 bg-gray-600 rounded-full"></div>
-                            <div class="ml-12 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                                <div class="glass-card rounded-xl p-5 gold-border">
-                                    <span class="text-gray-500 font-bold">阶段三</span>
-                                    <h4 class="text-lg font-bold text-white mt-1 mb-2">乐透正式启动</h4>
-                                    <p class="text-gray-500 text-sm">部署乐透合约，开放号码注册，启动每30分钟自动开奖</p>
-                                    <span class="inline-block mt-3 px-3 py-1 bg-gray-800 text-gray-500 text-xs rounded-full">计划中</span>
+                            <div class="absolute left-4 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 -ml-1.5 sm:-ml-2 bg-gray-600 rounded-full"></div>
+                            <div class="ml-10 sm:ml-12 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+                                <div class="glass-card rounded-xl p-4 sm:p-5 gold-border">
+                                    <span class="text-gray-500 font-bold text-sm sm:text-base">阶段三</span>
+                                    <h4 class="text-base sm:text-lg font-bold text-white mt-1 mb-2">乐透正式启动</h4>
+                                    <p class="text-gray-500 text-xs sm:text-sm">部署乐透合约，开放号码注册，启动每30分钟自动开奖</p>
+                                    <span class="inline-block mt-2 sm:mt-3 px-2 sm:px-3 py-1 bg-gray-800 text-gray-500 text-xs rounded-full">计划中</span>
                                 </div>
                             </div>
                         </div>
@@ -390,63 +395,63 @@
         </section>
 
         <!-- FAQ -->
-        <section class="py-16 px-4 bg-gradient-to-b from-transparent via-lotto-gold/5 to-transparent">
+        <section class="py-12 sm:py-16 px-3 sm:px-4 bg-gradient-to-b from-transparent via-lotto-gold/5 to-transparent">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">常见问题</span></h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12"><span class="gradient-text">常见问题</span></h2>
                 
-                <div class="space-y-4">
+                <div class="space-y-3 sm:space-y-4">
                     <details class="glass-card rounded-xl group gold-border" open>
-                        <summary class="p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-lotto-gold">预售如果失败会怎样？</span><svg class="w-5 h-5 text-lotto-gold group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="px-5 pb-5 text-gray-500"><p>如果在 7 天内未完成 120 BNB 的募集目标，所有参与资金将通过 Flap.sh 平台 <span class="text-green-400 font-bold">100% 全额退还</span></p></div>
+                        <summary class="p-4 sm:p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-lotto-gold text-sm sm:text-base pr-4">预售如果失败会怎样？</span><svg class="w-4 h-4 sm:w-5 sm:h-5 text-lotto-gold group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-500 text-sm"><p>如果在 7 天内未完成 120 BNB 的募集目标，所有参与资金将通过 Flap.sh 平台 <span class="text-green-400 font-bold">100% 全额退还</span></p></div>
                     </details>
                     
                     <details class="glass-card rounded-xl group gold-border">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white">每人可以参与多少预售？</span><svg class="w-5 h-5 text-lotto-gold group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="px-5 pb-5 text-gray-500"><p>每个钱包可参与金额范围为 <span class="text-lotto-gold font-bold">0.1 ~ 5 BNB</span></p></div>
+                        <summary class="p-4 sm:p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white text-sm sm:text-base pr-4">每人可以参与多少预售？</span><svg class="w-4 h-4 sm:w-5 sm:h-5 text-lotto-gold group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-500 text-sm"><p>每个钱包可参与金额范围为 <span class="text-lotto-gold font-bold">0.1 ~ 5 BNB</span></p></div>
                     </details>
                     
                     <details class="glass-card rounded-xl group gold-border">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white">开奖间隔是多少？</span><svg class="w-5 h-5 text-lotto-gold group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="px-5 pb-5 text-gray-500"><p>系统每 <span class="text-lotto-gold font-bold">30 分钟</span> 自动开奖一次，全天 48 次开奖机会</p></div>
+                        <summary class="p-4 sm:p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white text-sm sm:text-base pr-4">开奖间隔是多少？</span><svg class="w-4 h-4 sm:w-5 sm:h-5 text-lotto-gold group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-500 text-sm"><p>系统每 <span class="text-lotto-gold font-bold">30 分钟</span> 自动开奖一次，全天 48 次开奖机会</p></div>
                     </details>
                     
                     <details class="glass-card rounded-xl group gold-border">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white">奖池资金从哪里来？</span><svg class="w-5 h-5 text-lotto-gold group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="px-5 pb-5 text-gray-500"><p>每笔代币交易的 <span class="text-lotto-gold font-bold">5% 交易税全部注入奖池</span>。交易量越大，奖池增长越快。</p></div>
+                        <summary class="p-4 sm:p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white text-sm sm:text-base pr-4">奖池资金从哪里来？</span><svg class="w-4 h-4 sm:w-5 sm:h-5 text-lotto-gold group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-500 text-sm"><p>每笔代币交易的 <span class="text-lotto-gold font-bold">5% 交易税全部注入奖池</span>。交易量越大，奖池增长越快。</p></div>
                     </details>
                     
                     <details class="glass-card rounded-xl group gold-border">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white">如何参与抽奖？</span><svg class="w-5 h-5 text-lotto-gold group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="px-5 pb-5 text-gray-500"><p><span class="text-lotto-gold font-bold">持有代币数量达到 10000 即自动参与抽奖</span>，您无需进行任何额外操作！合约自动为您分配对应数量的号码，中奖后奖励自动发放至您的钱包。</p></div>
+                        <summary class="p-4 sm:p-5 cursor-pointer flex justify-between items-center"><span class="font-bold text-white text-sm sm:text-base pr-4">如何参与抽奖？</span><svg class="w-4 h-4 sm:w-5 sm:h-5 text-lotto-gold group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-gray-500 text-sm"><p><span class="text-lotto-gold font-bold">持有代币数量达到 10000 即自动参与抽奖</span>，您无需进行任何额外操作！合约自动为您分配对应数量的号码，中奖后奖励自动发放至您的钱包。</p></div>
                     </details>
                 </div>
             </div>
         </section>
 
         <!-- CTA 底部 -->
-        <section class="py-20 px-4">
+        <section class="py-12 sm:py-20 px-3 sm:px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <div class="glass-card rounded-3xl p-10 gold-border gold-glow-strong">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">准备好参与 <span class="gradient-text">超级乐透</span> 了吗？</h2>
-                    <p class="text-gray-500 mb-8 text-lg">通过 Flap.sh 参与公平预售，抢先成为早期持有者！</p>
+                <div class="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 gold-border gold-glow-strong">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">准备好参与 <span class="gradient-text">超级乐透</span> 了吗？</h2>
+                    <p class="text-gray-500 mb-6 sm:mb-8 text-sm sm:text-lg">通过 Flap PreLaunch 参与公平预售，抢先成为早期持有者！</p>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <div class="bg-black/50 rounded-lg p-3 gold-border"><p class="text-lotto-gold font-bold text-lg">120 BNB</p><p class="text-gray-600 text-xs">募集目标</p></div>
-                        <div class="bg-black/50 rounded-lg p-3 gold-border"><p class="text-white font-bold text-lg">0.1~5 BNB</p><p class="text-gray-600 text-xs">参与范围</p></div>
-                        <div class="bg-black/50 rounded-lg p-3 gold-border"><p class="text-lotto-gold font-bold text-lg">30 分钟</p><p class="text-gray-600 text-xs">开奖间隔</p></div>
-                        <div class="bg-black/50 rounded-lg p-3 gold-border"><p class="text-white font-bold text-lg">$1M</p><p class="text-gray-600 text-xs">初始市值</p></div>
+                    <div class="grid grid-cols-2 gap-2 sm:gap-4 mb-6 sm:mb-8">
+                        <div class="bg-black/50 rounded-lg p-2 sm:p-3 gold-border"><p class="text-lotto-gold font-bold text-sm sm:text-lg">120 BNB</p><p class="text-gray-600 text-[10px] sm:text-xs">募集目标</p></div>
+                        <div class="bg-black/50 rounded-lg p-2 sm:p-3 gold-border"><p class="text-white font-bold text-sm sm:text-lg">0.1~5 BNB</p><p class="text-gray-600 text-[10px] sm:text-xs">参与范围</p></div>
+                        <div class="bg-black/50 rounded-lg p-2 sm:p-3 gold-border"><p class="text-lotto-gold font-bold text-sm sm:text-lg">30 分钟</p><p class="text-gray-600 text-[10px] sm:text-xs">开奖间隔</p></div>
+                        <div class="bg-black/50 rounded-lg p-2 sm:p-3 gold-border"><p class="text-white font-bold text-sm sm:text-lg">$1M</p><p class="text-gray-600 text-[10px] sm:text-xs">初始市值</p></div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="https://prelaunch.flap.sh/bnb/sales" target="_blank" class="px-10 py-4 btn-gold rounded-xl text-lg transition-all duration-300">🚀 前往 Flap.sh 参与预售</a>
-                        <a href="#whitelist" class="px-10 py-4 glass-card rounded-xl font-bold text-lg hover:bg-lotto-gold/10 transition-all duration-300 gold-border">📋 提交白名单</a>
+                    <div class="flex flex-col items-center gap-3 sm:gap-4">
+                        <a href="https://prelaunch.flap.sh/bnb/sales" target="_blank" class="w-full sm:w-auto px-6 sm:px-10 py-3.5 sm:py-4 btn-gold rounded-xl text-base sm:text-lg transition-all duration-300 text-center">🚀 前往 Flap PreLaunch 参与预售</a>
+                        <a href="#whitelist" class="w-full sm:w-auto px-6 sm:px-10 py-3.5 sm:py-4 glass-card rounded-xl font-bold text-base sm:text-lg hover:bg-lotto-gold/10 transition-all duration-300 gold-border text-center">📋 提交白名单</a>
                     </div>
                     
-                    <div class="mt-6 text-sm text-gray-600"><p>🛡️ 未完成募集？<span class="text-green-500">100% 全额退款</span> | 📋 合约将开源验证</p></div>
+                    <div class="mt-4 sm:mt-6 text-xs sm:text-sm text-gray-600"><p>🛡️ 未完成募集？<span class="text-green-500">100% 全额退款</span></p></div>
                     
-                    <div class="flex justify-center space-x-6 mt-10">
-                        <a href="https://x.com/SuperLotto_BNB" target="_blank" class="w-12 h-12 glass-card rounded-xl flex items-center justify-center hover:bg-lotto-gold/10 transition-colors gold-border"><svg class="w-6 h-6 text-lotto-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                        <a href="https://t.me/SuperLotto_BNB" target="_blank" class="w-12 h-12 glass-card rounded-xl flex items-center justify-center hover:bg-lotto-gold/10 transition-colors gold-border"><svg class="w-6 h-6 text-lotto-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+                    <div class="flex justify-center space-x-4 sm:space-x-6 mt-6 sm:mt-10">
+                        <a href="https://x.com/SuperLotto_BNB" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 glass-card rounded-xl flex items-center justify-center hover:bg-lotto-gold/10 transition-colors gold-border"><svg class="w-5 h-5 sm:w-6 sm:h-6 text-lotto-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://t.me/SuperLotto_BNB" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 glass-card rounded-xl flex items-center justify-center hover:bg-lotto-gold/10 transition-colors gold-border"><svg class="w-5 h-5 sm:w-6 sm:h-6 text-lotto-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -454,14 +459,14 @@
     </main>
 
     <!-- 页脚 -->
-    <footer class="relative z-10 border-t border-lotto-gold/20 py-8">
+    <footer class="relative z-10 border-t border-lotto-gold/20 py-6 sm:py-8">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex items-center justify-center space-x-3 mb-4">
-                <img src="logo.jpg" alt="SuperLotto" class="w-8 h-8 rounded-full">
-                <span class="text-xl font-bold gradient-text">SuperLotto</span>
+            <div class="flex items-center justify-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+                <img src="logo.jpg" alt="SuperLotto" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full">
+                <span class="text-lg sm:text-xl font-bold gradient-text">SuperLotto</span>
             </div>
-            <p class="text-gray-600 text-sm">© 2024 SuperLotto. All rights reserved.</p>
-            <p class="text-gray-700 text-xs mt-2">BSC 链上去中心化彩票系统</p>
+            <p class="text-gray-600 text-xs sm:text-sm">© 2024 SuperLotto. All rights reserved.</p>
+            <p class="text-gray-700 text-xs mt-1 sm:mt-2">BSC 链上去中心化彩票系统</p>
         </div>
     </footer>
 
@@ -471,19 +476,7 @@
         const showError = (msg) => { errorMsg.textContent = msg; errorMsg.classList.remove('hidden'); successMsg.classList.add('hidden'); };
         const showSuccess = () => { successMsg.classList.remove('hidden'); errorMsg.classList.add('hidden'); input.value = ''; };
         const hideMessages = () => { errorMsg.classList.add('hidden'); successMsg.classList.add('hidden'); };
-        
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault(); hideMessages();
-            const address = input.value.trim();
-            if (!isValidAddress(address)) return showError('请输入有效的BSC钱包地址 (0x开头，40位十六进制)');
-            submitBtn.disabled = true; submitBtn.textContent = '提交中...';
-            try {
-                const response = await fetch('https://whitelist.superlotto.fun/whitelist.php', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'address=' + encodeURIComponent(address) });
-                const result = await response.json();
-                result.success ? showSuccess() : showError(result.message || '提交失败，请重试');
-            } catch (err) { showError('网络错误，请重试'); }
-            submitBtn.disabled = false; submitBtn.textContent = '提交白名单';
-        });
+        form.addEventListener('submit', async (e) => { e.preventDefault(); hideMessages(); const address = input.value.trim(); if (!isValidAddress(address)) return showError('请输入有效的BSC钱包地址 (0x开头，40位十六进制)'); submitBtn.disabled = true; submitBtn.textContent = '提交中...'; try { const response = await fetch('https://whitelist.superlotto.fun/whitelist.php', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'address=' + encodeURIComponent(address) }); const result = await response.json(); result.success ? showSuccess() : showError(result.message || '提交失败，请重试'); } catch (err) { showError('网络错误，请重试'); } submitBtn.disabled = false; submitBtn.textContent = '提交白名单'; });
         input.addEventListener('input', hideMessages);
     </script>
 </body>
